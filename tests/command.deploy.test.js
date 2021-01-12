@@ -132,7 +132,7 @@ if (process.env.IS_FORK !== 'true') {
 
         // validate edge handlers
         // use this until we can use `netlify api`
-        const [apiToken] = getToken()
+        const [apiToken] = await getToken()
         const resp = await fetch(`https://api.netlify.com/api/v1/deploys/${deploy.deploy_id}/edge_handlers`, {
           headers: {
             'Content-Type': 'application/json',
